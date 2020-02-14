@@ -26,14 +26,14 @@ static const CGFloat kPageMargin = 15; // millimeters, only applies to Sketch pa
 static const CGFloat kImageResolution = 300; // dpi
 static NSString *const kFontName = @"Helvetica Neue";
 
-static const CGFloat kWhiteColor[] = {0, 0, 0, 0, 1};
-static const CGFloat kCropMarkColor[] = {0, 0, 0, 1, 1};
-static const CGFloat kArtboardNameColor[] = {0, 0, 0, 0.4, 1};
-static const CGFloat kPrototypingLinkColor[] = {0, 0.38, 1, 0.04, 1};
-static const CGFloat kStartCircleFillColor[] = {0, 0, 0, 0, 1};
+static const CGFloat kWhiteColor[] = {1, 1, 1, 1};
+static const CGFloat kCropMarkColor[] = {0, 0, 0, 1};
+static const CGFloat kArtboardNameColor[] = {0.6, 0.6, 0.6, 1};
+static const CGFloat kPrototypingLinkColor[] = {0.96, 0.64, 0.13, 1};
+static const CGFloat kStartCircleFillColor[] = {1, 1, 1, 1};
 static const CGFloat kArtboardShadowBlur = 4;
 static const CGFloat kArtboardMinShadowBlur = 1;
-static const CGFloat kArtboardShadowColor[] = {0, 0, 0, 1, 0.5};
+static const CGFloat kArtboardShadowColor[] = {0, 0, 0, 0.5};
 static const CGSize kArrowSize = {.width = 5, .height = 5};
 static const CGFloat kConnectingEndPointOffset = 2;
 static const CGFloat kStartCircleDiameter = 3;
@@ -110,7 +110,7 @@ static const CGFloat kPrototypingLinkWidth = 0.5;
         _auxiliaryInfo = [self createAuxiliaryInfoWithOptions:self.options];
         _pageMargin = PEMMToUnit(kPageMargin);
         _slugBleed = self.options.slug + self.options.bleed;
-        _colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericCMYK);
+        _colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceSRGB);
     }
     return self;
 }
